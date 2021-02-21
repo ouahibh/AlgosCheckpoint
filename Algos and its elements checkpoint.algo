@@ -1,0 +1,31 @@
+ALGORITHM sentence_clacs;
+VAR
+    length, words_nb, vowels_nb, i : INTEGER;
+    sentence : STRING[9000]; 
+BEGIN
+    Write("Write a sentence that ends with a .");
+    Read(sentence);
+    
+    i:=0; length:=0; words_nb:=1; vowels_nb:=0;
+    
+    WHILE (sentence[i]<>'.') DO
+        length:=length+1;
+        
+        IF (sentence[i]=' ') THEN
+           words_nb:=words_nb+1;
+        END_IF
+
+        IF (sentence[i]='a' OR sentence[i]='e' OR sentence[i]='i' OR sentence[i]='o' OR sentence[i]='u' OR sentence[i]='y') THEN
+            vowels_nb:=vowels_nb+1;
+        END_IF
+        
+        i:=i+1;
+    END_WHILE
+
+    Write("The length of this sentence (the number of characters in this sentence) is: ");
+    Write(length);
+    Write("The number of words in this sentence is: ");
+    Write(vowels_nb);
+    Write("The number of vowels in this sentence is: ");
+    Write(vowels_nb);
+END
